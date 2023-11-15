@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNET-WebApp-Project-LitFilmHub", "ASPNET-WebApp-Project-LitFilmHub.csproj", "{68E4B0B6-AB5A-4ACE-B078-9DD18E4EE5E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary-LitFilmHub", "..\ClassLibrary-LitFilmHub\ClassLibrary-LitFilmHub.csproj", "{39F21179-1264-44D8-97C5-97F20746CF2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{68E4B0B6-AB5A-4ACE-B078-9DD18E4EE5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68E4B0B6-AB5A-4ACE-B078-9DD18E4EE5E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68E4B0B6-AB5A-4ACE-B078-9DD18E4EE5E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39F21179-1264-44D8-97C5-97F20746CF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39F21179-1264-44D8-97C5-97F20746CF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39F21179-1264-44D8-97C5-97F20746CF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39F21179-1264-44D8-97C5-97F20746CF2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
