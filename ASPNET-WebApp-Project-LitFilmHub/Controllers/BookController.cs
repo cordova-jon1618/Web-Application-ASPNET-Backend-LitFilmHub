@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ClassLibrary_LitFilmHub;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,6 +9,13 @@ namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
+        private readonly LiteratureAndFilmDbContext _db;
+
+        public BookController(LiteratureAndFilmDbContext db)
+        {
+            _db = db;
+        }
+
         // GET: api/<BookController>
         [HttpGet]
         public IEnumerable<string> Get()
