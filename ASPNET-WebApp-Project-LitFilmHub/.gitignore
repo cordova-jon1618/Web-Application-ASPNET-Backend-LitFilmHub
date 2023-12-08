@@ -479,3 +479,6 @@ $RECYCLE.BIN/
 # Ignore development appsettings
 appsettings.Development.json
 
+# Ignore .csv files in the Data folder
+Data/films.csv
+Data/books.csv
