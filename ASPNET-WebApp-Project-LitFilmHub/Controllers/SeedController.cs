@@ -110,7 +110,7 @@ namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
             await _db.SaveChangesAsync();
 
             return new JsonResult(filmsByTitle.Count);
-        }//end ImportBookAsync
+        }//end ImportFilmAsync
 
     }//end SeedController
 }
