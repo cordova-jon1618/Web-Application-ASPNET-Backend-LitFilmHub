@@ -1,4 +1,5 @@
-﻿using ClassLibrary_LitFilmHub;
+﻿using Microsoft.AspNetCore.Authorization;
+using ClassLibrary_LitFilmHub;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -18,10 +19,18 @@ namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
 
         // GET: api/<FilmController>
         [HttpGet]
+        [Authorize]
+        public IEnumerable<Film> Get()
+        {
+            return _db.Films.ToList();
+        }
+
+/*        // GET: api/<FilmController>
+        [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
-        }
+        }*/
 
         // GET api/<FilmController>/5
         [HttpGet("{id}")]

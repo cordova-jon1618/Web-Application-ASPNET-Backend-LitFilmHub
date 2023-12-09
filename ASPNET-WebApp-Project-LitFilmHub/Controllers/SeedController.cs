@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using CsvHelper;
 using CsvHelper.Configuration;
 using ClassLibrary_LitFilmHub;
@@ -16,13 +17,44 @@ namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
     public class SeedController : ControllerBase
     {
         private readonly LiteratureAndFilmDbContext _db;
-        private readonly string _pathName;
+        private UserManager<LiteratureAndFilmUser> _userManager;
+        //private readonly string _pathName;
+        private readonly string _booksPathName;
+        private readonly string _filmsPathName;
 
-        public SeedController(LiteratureAndFilmDbContext db, string pathName)
+        public SeedController(LiteratureAndFilmDbContext db, IWebHostEnvironment environment, UserManager<LiteratureAndFilmUser> userManager)
         {
             _db = db;
-            _pathName = pathName;
+            _userManager = userManager;
+            //_pathName = Path.Combine(environment.ContentRootPath, "Data/worldcities.csv");
+            _booksPathName = Path.Combine(environment.ContentRootPath, "Data/books.csv");
+            _filmsPathName = Path.Combine(environment.ContentRootPath, "Data/films.csv");
         }
+
+        [HttpPost("Users")]
+        public async Task<IActionResult> ImportUsersAsync()
+        {
+            List<LiteratureAndFilmUser> usersList = new();
+
+            (string name, string email) = ("user", "user@email.com");
+            LiteratureAndFilmUser user = new()
+            {
+                UserName = name,
+                Email = email,
+                SecurityStamp = Guid.NewGuid().ToString()
+            };
+            if (await _userManager.FindByNameAsync(name) is not null)
+            {
+                user.UserName = "user";
+            }
+            _ = await _userManager.CreateAsync(user, "P@ssw0rd!")
+                   ?? throw new InvalidOperationException();
+            user.EmailConfirmed = true;
+            user.LockoutEnabled = false;
+            await _db.SaveChangesAsync();
+            return Ok();
+        }
+
 
         [HttpGet("Books")]
         public async Task<IActionResult> ImportBooksAsync()
@@ -38,7 +70,7 @@ namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
                 HeaderValidated = null
             };
 
-            using StreamReader reader = new(_pathName);
+            using StreamReader reader = new(_booksPathName);
             using CsvReader csv = new(reader, config);
 
             IEnumerable<booksCsv>? records = csv.GetRecords<booksCsv>();
@@ -82,7 +114,7 @@ namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
                 HeaderValidated = null
             };
 
-            using StreamReader reader = new(_pathName);
+            using StreamReader reader = new(_filmsPathName);
             using CsvReader csv = new(reader, config);
 
             IEnumerable<filmsCsv>? records = csv.GetRecords<filmsCsv>();
