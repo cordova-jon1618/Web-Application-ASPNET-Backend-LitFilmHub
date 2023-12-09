@@ -2,7 +2,7 @@
 {
     public class filmsCsv
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Title { get; set; } = null!;
         public string Director { get; set; } = null!;
         public string Genre { get; set; } = null!;

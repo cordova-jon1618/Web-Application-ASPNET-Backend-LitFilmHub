@@ -87,7 +87,7 @@ namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
                     Author = record.Author,
                     Genre = record.Genre,
                     PublicationYear = record.PublicationYear,
-                    Isbn = record.Isbn,
+                    Isbn = record.ISBN,
                     Summary = record.Summary,
                     CoverImageUrl = record.CoverImageUrl,
                 };

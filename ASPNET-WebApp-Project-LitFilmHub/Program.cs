@@ -11,7 +11,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 
-var builder = WebApplication.CreateBuilder(args);
+//var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -28,8 +29,8 @@ builder.Services.AddSwaggerGen(c => {
             Name = "Jonathan Cordova",
             Url = new("https://canvas.csun.edu/courses/128137")
         },
-        Description = "APIs for World Cities",
-        Title = "World Cities APIs",
+        Description = "APIs for Books and Films",
+        Title = "Books and Films APIs",
         Version = "V1"
     });
     OpenApiSecurityScheme jwtSecurityScheme = new()
