@@ -37,6 +37,9 @@ public partial class LiteratureAndFilmDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
+
         modelBuilder.Entity<Book>(entity =>
         {
             entity.Property(e => e.Id).HasColumnName("ID");
@@ -47,6 +50,7 @@ public partial class LiteratureAndFilmDbContext : DbContext
                 .HasColumnName("ISBN");
             entity.Property(e => e.Title).HasMaxLength(255);
         });
+
 
         modelBuilder.Entity<Film>(entity =>
         {
