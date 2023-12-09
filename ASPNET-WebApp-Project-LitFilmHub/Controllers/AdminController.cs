@@ -5,7 +5,7 @@ using ClassLibrary_LitFilmHub;
 using System.IdentityModel.Tokens.Jwt;
 using ASPNET_WebApp_Project_LitFilmHub;
 
-namespace ASPNET_Practice1.Controllers
+namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
