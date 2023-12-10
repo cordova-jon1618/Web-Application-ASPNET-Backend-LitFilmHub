@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using ClassLibrary_LitFilmHub;
 using System.IdentityModel.Tokens.Jwt;
 using ASPNET_WebApp_Project_LitFilmHub;
-using Microsoft.Extensions.Logging; // Add this line to use ILogger
+using Microsoft.Extensions.Logging;
 using Microsoft.CodeAnalysis.Elfie.Diagnostics;
 
 namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
@@ -21,7 +21,7 @@ namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
         {
             _userManager = userManager;
             _jwtHandler = jwtHandler;
-            _logger = logger; // Initialize logger
+            _logger = logger; 
 
         }
 
