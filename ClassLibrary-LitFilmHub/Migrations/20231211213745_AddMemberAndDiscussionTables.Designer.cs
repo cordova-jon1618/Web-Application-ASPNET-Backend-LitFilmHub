@@ -4,6 +4,7 @@ using ClassLibrary_LitFilmHub;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClassLibrary_LitFilmHub.Migrations
 {
     [DbContext(typeof(LiteratureAndFilmDbContext))]
-    partial class LiteratureAndFilmDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231211213745_AddMemberAndDiscussionTables")]
+    partial class AddMemberAndDiscussionTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

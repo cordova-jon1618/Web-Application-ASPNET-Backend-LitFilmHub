@@ -22,6 +22,10 @@ public partial class LiteratureAndFilmDbContext : IdentityDbContext<LiteratureAn
 
     public virtual DbSet<Film> Films { get; set; }
 
+    public virtual DbSet<Member> Members { get; set; }
+
+    public virtual DbSet<Discussion> Discussions { get; set; }
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -61,6 +65,35 @@ public partial class LiteratureAndFilmDbContext : IdentityDbContext<LiteratureAn
             entity.Property(e => e.Rating).HasMaxLength(50);
             entity.Property(e => e.Title).HasMaxLength(255);
         });
+
+
+        modelBuilder.Entity<Member>(entity =>
+        {
+            entity.Property(e => e.MemberID).HasColumnName("MemberID");
+            entity.Property(e => e.FirstName).HasMaxLength(100);
+            entity.Property(e => e.MiddleInitial).HasMaxLength(1);
+            entity.Property(e => e.LastName).HasMaxLength(100);
+            entity.Property(e => e.City).HasMaxLength(100);
+            entity.Property(e => e.Country).HasMaxLength(100);
+            entity.Property(e => e.Email).HasMaxLength(255);
+            entity.Property(e => e.Username).HasMaxLength(50);
+            entity.Property(e => e.Password).HasMaxLength(255);
+
+        });
+
+        modelBuilder.Entity<Discussion>(entity =>
+        {
+            entity.Property(e => e.DiscussionID).HasColumnName("DiscussionID");
+            entity.Property(e => e.Content).HasColumnType("text");
+
+            // Define the relationship between Discussion and Member
+            entity.HasOne(d => d.Member)
+                .WithMany(m => m.Discussions)
+                .HasForeignKey(d => d.MemberID)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
+
+
 
         OnModelCreatingPartial(modelBuilder);
     }

@@ -1,0 +1,21 @@
+MemberID,FirstName,MiddleInitial,LastName,City,Country,Email,Username,Password
+1,John,A,Doe,New York,USA,john.doe@example.com,johndoe,password123
+2,Jane,B,Smith,Los Angeles,USA,jane.smith@example.com,janesmith,password456
+3,Alice,C,Johnson,Chicago,USA,alice.johnson@example.com,alicejohnson,password789
+4,Michael,D,Brown,Houston,USA,michael.brown@example.com,michaelbrown,password101
+5,Emily,E,Davis,Phoenix,USA,emily.davis@example.com,emilydavis,password102
+6,David,F,Miller,Philadelphia,USA,david.miller@example.com,davidmiller,password103
+7,Sarah,G,Wilson,San Antonio,USA,sarah.wilson@example.com,sarahwilson,password104
+8,Chris,H,Moore,San Diego,USA,chris.moore@example.com,chrismoore,password105
+9,Jessica,I,Taylor,Dallas,USA,jessica.taylor@example.com,jessicataylor,password106
+10,Daniel,J,Anderson,San Jose,USA,daniel.anderson@example.com,danielanderson,password107
+11,Laura,K,Thomas,Austin,USA,laura.thomas@example.com,laurathomas,password108
+12,Ryan,L,Jackson,Jacksonville,USA,ryan.jackson@example.com,ryanjackson,password109
+13,Julia,M,White,San Francisco,USA,julia.white@example.com,juliawhite,password110
+14,Brian,N,Harris,Indianapolis,USA,brian.harris@example.com,brianharris,password111
+15,Lisa,O,Martin,Columbus,USA,lisa.martin@example.com,lisamartin,password112
+16,Kevin,P,Thompson,Fort Worth,USA,kevin.thompson@example.com,kevinthompson,password113
+17,Angela,Q,Garcia,Charlotte,USA,angela.garcia@example.com,angelagarcia,password114
+18,Eric,R,Martinez,Detroit,USA,eric.martinez@example.com,ericmartinez,password115
+19,Nancy,S,Robinson,El Paso,USA,nancy.robinson@example.com,nancyrobinson,password116
+20,Steve,T,Clark,Memphis,USA,steve.clark@example.com,steveclark,password117
