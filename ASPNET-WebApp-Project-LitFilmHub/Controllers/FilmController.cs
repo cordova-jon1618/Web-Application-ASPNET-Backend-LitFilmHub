@@ -25,12 +25,19 @@ namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
             return _db.Films.ToList();
         }
 
-/*        // GET: api/<FilmController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        // GET: api/film-detail
+        [HttpGet("film-detail")]
+        public IEnumerable<Film> GetFilmDetail()
         {
-            return new string[] { "value1", "value2" };
-        }*/
+            return _db.Films.ToList();
+        }
+
+        /*        // GET: api/<FilmController>
+                [HttpGet]
+                public IEnumerable<string> Get()
+                {
+                    return new string[] { "value1", "value2" };
+                }*/
 
         // GET api/<FilmController>/5
         [HttpGet("{id}")]
