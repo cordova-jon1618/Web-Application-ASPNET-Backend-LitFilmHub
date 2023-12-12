@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ClassLibrary_LitFilmHub;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,12 +10,29 @@ namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
     [ApiController]
     public class MemberController : ControllerBase
     {
+        private readonly LiteratureAndFilmDbContext _db;
+
+        public MemberController(LiteratureAndFilmDbContext db)
+        {
+            _db = db;
+        }
+
+        // GET: api/<MemberController>
+        [HttpGet]
+        [Authorize]
+        public IEnumerable<Member> Get()
+        {
+            return _db.Members.ToList();
+        }
+
+        /*
         // GET: api/<MemberController>
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
+        */
 
         // GET api/<MemberController>/5
         [HttpGet("{id}")]
