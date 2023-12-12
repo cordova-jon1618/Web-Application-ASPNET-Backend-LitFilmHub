@@ -39,6 +39,33 @@ namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
         {
         }
 
+        // POST api/<DiscussionController>/addMessage
+        [HttpPost("addMessage")]
+        [Authorize]
+        public IActionResult AddMessage([FromBody] string message)
+        {
+            try
+            {
+                // Create a new Discussion object and set its Content property
+                var discussion = new Discussion
+                {
+                    Content = message
+                };
+
+                // Add the discussion to the database
+                _db.Discussions.Add(discussion);
+                _db.SaveChanges();
+
+                // Optionally, return a success message or the newly created discussion
+                return Ok("Message added successfully");
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors and return an error response
+                return BadRequest($"Error: {ex.Message}");
+            }
+        }
+
         // PUT api/<DiscussionController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
