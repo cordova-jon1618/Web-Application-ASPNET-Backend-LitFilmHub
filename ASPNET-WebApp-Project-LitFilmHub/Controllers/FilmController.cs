@@ -19,7 +19,7 @@ namespace ASPNET_WebApp_Project_LitFilmHub.Controllers
 
         // GET: api/<FilmController>
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public IEnumerable<Film> Get()
         {
             return _db.Films.ToList();
