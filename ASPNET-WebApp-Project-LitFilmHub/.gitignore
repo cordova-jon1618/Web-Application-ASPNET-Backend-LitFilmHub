@@ -476,9 +476,12 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# Ignore development appsettings
+# Ignore development and production appsettings
 appsettings.Development.json
+appsettings.Production.json
 
 # Ignore .csv files in the Data folder
 Data/films.csv
 Data/books.csv
+Data/discussions.csv
+Data/members.csv

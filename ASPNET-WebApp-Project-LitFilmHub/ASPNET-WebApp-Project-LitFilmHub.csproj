@@ -25,4 +25,10 @@
     <ProjectReference Include="..\ClassLibrary-LitFilmHub\ClassLibrary-LitFilmHub.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\books.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
